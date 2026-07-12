@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		AA0001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0001 /* AppDelegate.swift */; };
 		AA0002 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0002 /* ViewController.swift */; };
+		AA0004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0004 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB0001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB0002 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB0003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB0004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB0010 /* S4Moflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = S4Moflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -42,6 +44,7 @@
 				AB0001 /* AppDelegate.swift */,
 				AB0002 /* ViewController.swift */,
 				AB0003 /* Info.plist */,
+				AB0004 /* Assets.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +101,9 @@
 		AC0003 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = ();
+			files = (
+				AA0004 /* Assets.xcassets in Resources */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
@@ -176,4 +181,3 @@
 	};
 	rootObject = AF0001 /* Project object */;
 }
-
