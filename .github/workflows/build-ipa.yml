@@ -1,0 +1,45 @@
+name: Build S4MOFLIX IPA (unsigned)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
+      - name: Build unsigned IPA
+        run: |
+          xcodebuild \
+            -project S4Moflix/S4Moflix.xcodeproj \
+            -scheme S4Moflix \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination generic/platform=iOS \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            DEVELOPMENT_TEAM="" \
+            clean build \
+            SYMROOT=$(pwd)/build
+
+      - name: Package IPA
+        run: |
+          APP_PATH=$(find build -name "*.app" | head -1)
+          mkdir -p Payload
+          cp -r "$APP_PATH" Payload/
+          zip -r S4MOFLIX-unsigned.ipa Payload/
+          ls -lh S4MOFLIX-unsigned.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: S4MOFLIX-unsigned-ipa
+          path: S4MOFLIX-unsigned.ipa
+          retention-days: 30
