@@ -43,7 +43,6 @@
 				AB0002 /* ViewController.swift */,
 				AB0003 /* Info.plist */,
 			);
-			path = S4Moflix;
 			sourceTree = "<group>";
 		};
 		AD0003 /* Products */ = {
@@ -147,7 +146,7 @@
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = S4Moflix/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.s4moflix.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -177,3 +176,4 @@
 	};
 	rootObject = AF0001 /* Project object */;
 }
+
